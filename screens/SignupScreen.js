@@ -60,21 +60,20 @@ export const SignUpScreen = () => {
                 onPress={ () => onSignUp(input.email, input.password) }
             />
 
-            <ReactNative.TouchableOpacity
-                onPress={ () => navigation.navigate("SignIn") }
-            >
-                <ReactNative.Text style={ styles.clickableText }>
-                    Sign In
-                </ReactNative.Text>
-            </ReactNative.TouchableOpacity>
 
-            <ReactNative.TouchableOpacity
-                onPress={ () => navigation.navigate("ConfirmEmail") }
+            <ReactNative.Text
+                onPress={ () => navigation.navigate("SignIn") }
+                style={ styles.clickableText }
             >
-                <ReactNative.Text style={ styles.clickableText }>
-                    Confirm Email
-                </ReactNative.Text>
-            </ReactNative.TouchableOpacity>
+                Sign In
+            </ReactNative.Text>
+
+            <ReactNative.Text
+                onPress={ () => navigation.navigate("ConfirmEmail") }
+                style={ styles.clickableText }
+            >
+                Confirm Email
+            </ReactNative.Text>
         </ReactNative.View>
     );
 };

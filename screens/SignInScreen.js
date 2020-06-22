@@ -61,6 +61,20 @@ export const SignInScreen = () => {
                 disabled={ inputStatus === "SUBMITTING" }
                 onPress={ () => onSignIn(input.email, input.password) }
             />
+
+            <ReactNative.Text
+                onPress={ () => navigation.navigate("SignUp") }
+                style={ styles.clickableText }
+            >
+                Sign Up
+            </ReactNative.Text>
+
+            <ReactNative.Text
+                onPress={ () => navigation.navigate("ConfirmEmail") }
+                style={ styles.clickableText }
+            >
+                Confirm Email
+            </ReactNative.Text>
         </ReactNative.View>
     );
 };
@@ -77,5 +91,11 @@ const styles = ReactNative.StyleSheet.create({
         paddingLeft: 15,
         borderWidth: 2,
         borderColor: "#909090"
+    },
+    clickableText: {
+        fontSize: 16,
+        textAlign: "center",
+        textDecorationLine: "underline",
+        marginTop: 30
     }
 });

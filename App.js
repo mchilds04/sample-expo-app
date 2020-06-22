@@ -21,7 +21,7 @@ const Stack = createStackNavigator();
 const AuthStack = createStackNavigator();
 
 const AuthNavigation = ({ authState }) => (
-  <AuthStack.Navigator>
+  <AuthStack.Navigator initialRouteName="SignIn">
     <AuthStack.Screen name="SignUp" component={ SignUpScreen } />
     <AuthStack.Screen name="ConfirmEmail" component={ ConfirmEmailScreen } />
     <AuthStack.Screen name="SignIn" component={ SignInScreen } />
@@ -29,8 +29,10 @@ const AuthNavigation = ({ authState }) => (
 );
 
 const AppContainer = ({ authData, authState }) => {
+
   const AuthNavigationWithProps = () =>
     <AuthNavigation authState={ authState } />
+
   return (
     <React.Fragment>
       <Stack.Navigator>
