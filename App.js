@@ -56,22 +56,15 @@ const AppContainer = ({ authData, authState }) => {
 };
 
 export default function App(props) {
-  const isLoadingComplete = useCachedResources();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <View style={ styles.container }>
-        { Platform.OS === 'ios' && <StatusBar barStyle="dark-content" /> }
-        <NavigationContainer linking={ LinkingConfiguration }>
-          <Authenticator hideDefault={ true } container={ false }>
-            <AppContainer />
-          </Authenticator>
-        </NavigationContainer>
-      </View>
-    );
-  }
+  return (
+    <View style={ styles.container }>
+      <NavigationContainer linking={ LinkingConfiguration }>
+        <Authenticator hideDefault={ true } container={ false }>
+          <AppContainer />
+        </Authenticator>
+      </NavigationContainer>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
