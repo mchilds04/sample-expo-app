@@ -16,12 +16,10 @@ export const ConfirmEmailScreen = () => {
     const [inputStatus, setStatus] = React.useState("");
 
     const onInput = (inputKey) => ({ nativeEvent }) => {
-        console.log(inputKey, nativeEvent.text)
         setInput({ ...input, [inputKey]: nativeEvent.text })
     };
 
     const onConfirmEmail = (email, code) => {
-        console.log("CODE: ", code)
         setStatus("SUBMITTING");
         Auth.confirmSignUp(email, code)
             .then((authData) => {

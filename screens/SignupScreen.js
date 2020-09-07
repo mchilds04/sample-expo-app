@@ -11,7 +11,6 @@ export const SignUpScreen = () => {
     const [inputStatus, setStatus] = React.useState("");
 
     const onInput = (inputKey) => ({ nativeEvent }) => {
-        console.log(inputKey, nativeEvent.text)
         setInput({ ...input, [inputKey]: nativeEvent.text })
     };
 

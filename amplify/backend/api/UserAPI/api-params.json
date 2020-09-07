@@ -1,0 +1,37 @@
+{
+    "paths": [
+        {
+            "name": "/api/users",
+            "lambdaFunction": "GetUsers",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET"
+                ]
+            }
+        }
+    ],
+    "resourceName": "UserAPI",
+    "apiName": "UserAPI",
+    "functionArns": [
+        {
+            "lambdaFunction": "GetUsers"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyauthapp-dev-204906-authRole",
+        "unAuthRoleName": "amplify-amplifyauthapp-dev-204906-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "GetUsers",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
